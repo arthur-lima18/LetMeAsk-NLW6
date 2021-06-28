@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { useHistory } from 'react-router';
 
 import illustrationImg from '../assets/images/illustration.svg';
@@ -7,8 +8,11 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import '../styles/auth.scss';
 import { Button } from '../components/Button';
 
+import { TestContext } from '../App';
+
 export function Home() {
 	const history = useHistory();
+	const value = useContext(TestContext);
 
 	function navigateToNewRoom() {
 		history.push('/rooms/new')
